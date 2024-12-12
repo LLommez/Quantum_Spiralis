@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Particle in a Box - Sphaera Quantum</title>
+    <link rel="stylesheet" href="../html/css/pnc1d.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Sphaera Quantum</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="concepts.html">Basic Concepts</a></li>
+                <li><a href="normalization.html">Normalization</a></li>
+                <li><a href="particle-in-box.html" class="active">Particle in a Box</a></li>
+                <li><a href="harmonic-oscillator.html">Harmonic Oscillator</a></li>
+                <li><a href="rigid-rotor.html">Rigid Rotor</a></li>
+                <li><a href="hydrogen-atom.html">Hydrogen Atom</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro section">
+            <h2>Particle in a Box</h2>
+            <p>The particle in a box is a foundational concept in quantum mechanics. It explores a particle confined to move within a box with infinitely high potential barriers.</p>
+        </section>
+
+        <section class="concepts section">
+            <h3>Energy Levels</h3>
+            <p>In quantum mechanics, the energy of the particle in a box is quantized. The energy levels are determined by the formula:</p>
+            <p><strong>Energy (E<sub>n</sub>) = (n²h²)/(8mL²)</strong></p>
+            <p>where:</p>
+            <ul>
+                <li><strong>n</strong> is the quantum number (1, 2, 3...)</li>
+                <li><strong>h</strong> is Planck's constant</li>
+                <li><strong>m</strong> is the mass of the particle</li>
+                <li><strong>L</strong> is the length of the box</li>
+            </ul>
+            <div class="calculator">
+                <h4>Energy Calculator</h4>
+                <p>Enter the parameters below to calculate the energy levels:</p>
+                <iframe src="energy_calculator.html" class="calculator-frame" title="Energy Calculator"></iframe>
+            </div>
+        </section>
+
+        <section class="position section">
+            <h3>Position of the Particle</h3>
+            <p>The probability of finding the particle at a position <strong>x</strong> within the box is determined by the wavefunction:</p>
+            <p><strong>ψ<sub>n</sub>(x) = √(2/L) * sin(nπx/L)</strong></p>
+            <div class="calculator">
+                <h4>Position Calculator</h4>
+                <p>Use the tool below to calculate the wavefunction at a specific position:</p>
+                <iframe src="position_calculator.html" class="calculator-frame" title="Position Calculator"></iframe>
+            </div>
+        </section>
+
+        <section class="probability-density section">
+            <h3>Probability Density</h3>
+            <p>The probability density is given by the square of the wavefunction:</p>
+            <p><strong>|ψ<sub>n</sub>(x)|² = (2/L) * sin²(nπx/L)</strong></p>
+            <div class="graph">
+                <h4>Probability Density Visualization</h4>
+                <p>The graph below shows the probability density for a selected quantum number:</p>
+                <iframe src="probability_graph.html" class="graph-frame" title="Probability Density Graph"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sphaera Quantum. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,185 @@
+/* Reset some basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7fa;
+    color: #333;
+    padding-top: 80px; /* Prevents content from being hidden behind fixed header */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 20px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    font-size: 2rem;
+    color: #ecf0f1;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 2px;
+}
+
+/* Main Section */
+main {
+    padding: 60px 20px;
+}
+
+/* Intro Section */
+.intro.section {
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    border-radius: 8px;
+}
+
+.intro h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #34495e;
+    font-weight: bold;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* Language Selection Section */
+.language-selection.section {
+    text-align: center;
+    padding: 50px;
+    margin-top: 30px;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.language-selection h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #34495e;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Botão com ajustes */
+.language-btn {
+    background-color: #f39c12;
+    color: white;
+    padding: 20px 40px;  /* Ajuste para um padding mais equilibrado */
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;   /* Usando inline-flex para o botão ser flexível */
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+    text-align: center;       /* Garante que o texto dentro do botão esteja alinhado */
+}
+
+.language-btn:hover {
+    background-color: #e67e22;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsiveness for smaller screens */
+@media screen and (max-width: 768px) {
+    header .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    .intro h2 {
+        font-size: 2.5rem;
+    }
+
+    .intro p {
+        font-size: 1.1rem;
+    }
+
+    .language-btn {
+        width: 120px;
+        font-size: 1.2rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

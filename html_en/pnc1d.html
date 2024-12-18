@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Particle in a Box - Sphaera Quantum</title>
+    <link rel="stylesheet" href="../html_en/css/pnc1d.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Sphaera Quantum</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="indexen.html">Home</a></li>
+                <li><a href="concepts.html">Basic Concepts</a></li>
+                <li><a href="normalization.html">Normalization</a></li>
+                <li><a href="particle-in-box.html" class="active">Particle in a Box</a></li>
+                <li><a href="osha.html">Harmonic Oscillator</a></li>
+                <li><a href="rigid-rotor.html">Rigid Rotor</a></li>
+                <li><a href="hydrogen-atom.html">Hydrogen Atom</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro section">
+            <h2>Particle in a Box</h2>
+            <p>The particle in a box is a foundational concept in quantum mechanics. It explores a particle confined to move within a box with infinitely high potential barriers.</p>
+        </section>
+
+        <section class="concepts section">
+            <h3>Wavefunction</h3>
+            <p>The wavefunction for a particle in a 1D box is given by:</p>
+            <p>
+                \[
+                \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right)
+                \]
+            </p>
+        </section>
+
+        <section class="concepts section">
+            <h3>Normalization of the Wavefunction</h3>
+            <p>The wavefunction must satisfy the normalization condition:</p>
+            <p>
+                \[
+                \int_0^L |\psi_n(x)|^2 dx = 1
+                \]
+            </p>
+            <h4>Steps to Normalize:</h4>
+            <ol>
+                <li>
+                    <p><strong>Substitute \(\psi_n(x)\) into the integral:</strong></p>
+                    <p>
+                        \[
+                        \int_0^L \left(A \sin\left(\frac{n\pi x}{L}\right)\right)^2 dx
+                        \]
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Factor out constants:</strong></p>
+                    <p>
+                        \[
+                        {A²}\ \int_0^L \sin^2\left(\frac{n\pi x}{L}\right) dx
+                        \]
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Use the trigonometric identity:</strong></p>
+                    <p>
+                        \[
+                        \sin^2(\theta) = \frac{1 - \cos(2\theta)}{2}
+                        \]
+                    </p>
+                    <p>Substitute into the integral:</p>
+                    <p>
+                        \[
+                        {A^2}\ \int_0^L \frac{1 - \cos\left(\frac{2n\pi x}{L}\right)}{2} dx
+                        \]
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Simplify the integral:</strong></p>
+                    <p>
+                        \[
+                        \frac{A^2}{2} \int_0^L 1 \, dx - \frac{1}{2} \int_0^L \cos\left(\frac{2n\pi x}{L}\right) dx
+                        \]
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Evaluate the integrals:</strong></p>
+                    <p>The first integral is:</p>
+                    <p>
+                        \[
+                        \int_0^L 1 \, dx = L
+                        \]
+                    </p>
+                    <p>The second integral is:</p>
+                    <p>
+                        \[
+                        \int_0^L \cos\left(\frac{2n\pi x}{L}\right) dx = \frac{\sin\left(\frac{2n\pi x}{L}\right)}{\frac{2n\pi}{L}}\Big|_0^L = 0
+                        \]
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Combine the results:</strong></p>
+                    <p>
+                        \[
+                        \frac{A²}{2} \cdot L = 1
+                        \]
+                    </p>
+                    <p> 
+                        \[
+                        {A}  = \sqrt{\frac{2}{L}}
+                        \]
+                    </p>
+                    <p>Thus, the wavefunction is normalized.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="concepts section">
+            <h3>Energy Levels</h3>
+            <p>In quantum mechanics, the energy of the particle in a box is quantized. The energy levels are determined by the formula:</p>
+            <p>
+                \[
+                E_n = \frac{n^2 h^2}{8mL^2}
+                \]
+            </p>
+            <p>where:</p>
+            <ul>
+                <li><strong>n</strong> is the quantum number (1, 2, 3...)</li>
+                <li><strong>h</strong> is Planck's constant</li>
+                <li><strong>m</strong> is the mass of the particle</li>
+                <li><strong>L</strong> is the length of the box</li>
+            </ul>
+        </section>
+
+        <section class="position section">
+            <h3>Position of the Particle</h3>
+            <p>The probability of finding the particle at a position \(x\) is determined by:</p>
+            <p>
+                \[
+                |\psi_n(x)|^2 = \frac{2}{L} \sin^2\left(\frac{n\pi x}{L}\right)
+                \]
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sphaera Quantum. All rights reserved.</p>
+    </footer>
+</body>
+</html>

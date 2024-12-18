@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Harmonic Oscillator - Sphaera Quantum</title>
+    <link rel="stylesheet" href="../html_en/css/osha.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Sphaera Quantum</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="indexpt.html">Home</a></li>
+                <li><a href="concepts.html">Basic Concepts</a></li>
+                <li><a href="normalization.html">Normalization</a></li>
+                <li><a href="pnc1d.html">Particle in a Box</a></li>
+                <li><a href="osha.html" class="active">Harmonic Oscillator</a></li>
+                <li><a href="rigid-rotor.html">Rigid Rotor</a></li>
+                <li><a href="hydrogen-atom.html">Hydrogen Atom</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro section">
+            <h2>Harmonic Oscillator</h2>
+            <p>The harmonic oscillator is a fundamental model in quantum mechanics. It describes a particle subject to a restoring force proportional to its displacement, commonly represented by a spring or a pendulum.</p>
+        </section>
+
+        <section class="energy-levels section">
+            <h3>Energy Levels</h3>
+            <p>The energy of a quantum harmonic oscillator is quantized. The energy levels are given by the formula:</p>
+            <p><strong>Energy (E<sub>n</sub>) = (n + 1/2)ħω</strong></p>
+            <p>where:</p>
+            <ul>
+                <li><strong>n</strong> is the quantum number (0, 1, 2...)</li>
+                <li><strong>ħ</strong> is the reduced Planck's constant</li>
+                <li><strong>ω</strong> is the angular frequency</li>
+            </ul>
+            <div class="calculator">
+                <h4>Energy Calculator</h4>
+                <p>Enter the parameters below to calculate the energy levels:</p>
+                <iframe src="energy_calculator.html" class="calculator-frame" title="Energy Calculator"></iframe>
+            </div>
+        </section>
+
+        <section class="wavefunction section">
+            <h3>Wavefunction</h3>
+            <p>The wavefunction of the quantum harmonic oscillator is given by:</p>
+            <p><strong>ψ<sub>n</sub>(x) = (1 / √(2<sup>n</sup> n!)) (mω/πħ)<sup>1/4</sup> e<sup>-mωx² / 2ħ</sup> H<sub>n</sub>(√(mω/ħ) x)</strong></p>
+            <div class="calculator">
+                <h4>Wavefunction Calculator</h4>
+                <p>Use the tool below to calculate the wavefunction for a specific quantum number:</p>
+                <iframe src="wavefunction_calculator.html" class="calculator-frame" title="Wavefunction Calculator"></iframe>
+            </div>
+        </section>
+
+        <section class="probability-density section">
+            <h3>Probability Density</h3>
+            <p>The probability density is the square of the wavefunction:</p>
+            <p><strong>|ψ<sub>n</sub>(x)|²</strong></p>
+            <div class="graph">
+                <h4>Probability Density Visualization</h4>
+                <p>The graph below shows the probability density for a selected quantum number:</p>
+                <iframe src="probability_graph.html" class="graph-frame" title="Probability Density Graph"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sphaera Quantum. All rights reserved.</p>
+    </footer>
+</body>
+</html>

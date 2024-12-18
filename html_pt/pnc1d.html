@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Partícula na Caixa - Sphaera Quantum</title>
+    <link rel="stylesheet" href="../html_en/css/pnc1d.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Sphaera Quantum</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="indexpt.html">Início</a></li>
+                <li><a href="concepts.html">Conceitos Básicos</a></li>
+                <li><a href="normalization.html">Normalização</a></li>
+                <li><a href="particle-in-box.html" class="active">Partícula na Caixa</a></li>
+                <li><a href="osha.html">Oscilador Harmônico</a></li>
+                <li><a href="rigid-rotor.html">Rotor Rígido</a></li>
+                <li><a href="hydrogen-atom.html">Átomo de Hidrogênio</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro section" style="text-align: justify;">
+            <h2>Partícula na Caixa</h2>
+            <p>A "partícula na caixa" é um modelo fundamental na mecânica quântica. Imagine uma partícula, como um elétron, que está presa dentro de uma caixa. As paredes dessa caixa são muito altas, ou seja, a partícula não pode sair de dentro dela. Fora da caixa, o potencial (ou a "energia" que impede a partícula de sair) é considerado zero. Isso significa que a partícula está restrita a se mover dentro da caixa, e sua energia depende apenas do tamanho e das características dessa caixa.</p>
+            
+            <p>Mas por que dizemos que o potencial fora da caixa é zero? Bem, esse modelo é uma simplificação que nos ajuda a entender o comportamento das partículas em situações limitadas. Ao assumir que o potencial fora da caixa é zero, estamos basicamente dizendo que não há nada interferindo ou impedindo a partícula de se mover quando ela está dentro da caixa. Fora dela, ela simplesmente não existe, pois é impossível para ela sair (as barreiras da caixa são infinitamente altas). Isso cria uma situação idealizada que facilita o estudo de como a partícula se comporta quando está restrita a um espaço finito.</p>
+            
+            <p>O objetivo desse modelo é estudar como a partícula se comporta quando está confinada, ou seja, como sua energia e movimento mudam quando o espaço é limitado. No mundo da mecânica quântica, as partículas não se movem como objetos comuns. Elas têm uma natureza "ondulatória", o que significa que sua posição pode ser descrita por uma função de onda. Essa função de onda nos diz a probabilidade de encontrar a partícula em diferentes lugares dentro da caixa.</p>
+        
+            <p>Quando dizemos que o potencial fora da caixa é zero, estamos criando um ambiente simples e controlado onde podemos observar como a partícula "se adapta" ao espaço que ela tem disponível. Isso nos permite entender conceitos importantes da mecânica quântica, como a quantização de energia, onde a partícula só pode ter certos níveis de energia, dependendo do tamanho da caixa e das condições que impomos. Essa ideia de quantização é um dos pilares da mecânica quântica e é fundamental para entender o comportamento de elétrons em átomos, por exemplo.</p>
+        
+            <p>Esse modelo é importante porque é uma das primeiras aproximações que nos ajudam a compreender como as partículas se comportam em situações mais complexas. A "partícula na caixa" não é só uma ideia teórica, mas também uma base para entender fenômenos reais em física quântica, como a formação de níveis de energia em sistemas microscópicos, e até mesmo para o estudo de materiais com propriedades quânticas especiais, como semicondutores e supercondutores.</p>
+        </section>
+        
+
+        <section class="concepts section" style="text-align: justify;">
+            <h3>Função de Onda</h3>
+<p>A função de onda para uma partícula em uma caixa 1D é dada por:</p>
+            <p>
+                \[
+                \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right)
+                \]
+            </p>
+            <p>Mas como sabemos disso? Vamos entender como essa função é derivada e por que ela tem essa forma específica.</p>
+
+            <p>Primeiro, a função de onda \(\psi(x)\) descreve a probabilidade de encontrar a partícula em uma posição \(x\) dentro da caixa. Sabemos que a partícula está confinada a um espaço limitado, e por isso a função de onda deve ser zero nas paredes da caixa, ou seja, em \(x = 0\) e \(x = L\), onde \(L\) é o comprimento da caixa. Isso porque, como a partícula não pode sair da caixa, a probabilidade de encontrá-la nas paredes é nula.</p>
+        
+            <p>Para garantir que a função de onda seja zero nas paredes, escolhemos uma função matemática que tenha esse comportamento: a função seno. O seno tem o comportamento de ser zero em certos pontos, e é exatamente isso que precisamos. No caso da partícula na caixa, queremos que a função de onda seja zero nas extremidades, então a função seno é ideal porque ela tem raízes (valores onde o seno é zero) em múltiplos inteiros de \(\pi\).</p>
+        
+            <p>A fórmula da função de onda é dada por \(\psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right)\), onde \(n\) é um número inteiro positivo chamado de "número quântico". Esse número define os diferentes estados de energia que a partícula pode ter dentro da caixa. O fator \(\sqrt{\frac{2}{L}}\) é uma constante de normalização que garante que a probabilidade total de encontrar a partícula em qualquer posição da caixa seja igual a 1 (a dedução desse fator vai ser mostrada no próximo tópico, passo a passo para que não reste dúvidas de onde ele veio), ou seja, a partícula deve estar em algum lugar dentro da caixa com certeza.</p>
+        
+            <p>Agora, por que a função tem esse termo \(\frac{n\pi x}{L}\)? Esse termo é responsável por fazer a função de onda se ajustar ao tamanho da caixa e aos diferentes modos possíveis de vibração da partícula. O número \(n\) determina o número de "nós" ou pontos onde a função de onda é zero dentro da caixa. Quanto maior o valor de \(n\), mais nós a função de onda terá, o que está relacionado a um estado de maior energia. Ou seja, à medida que \(n\) aumenta, a partícula tem mais "possibilidades" de se comportar de maneiras mais complexas, e sua energia também aumenta.</p>
+        
+            <p>Portanto, a forma da função de onda para a partícula na caixa não é arbitrária. Ela vem diretamente das condições de contorno do problema: a partícula está confinada dentro da caixa, e a função de onda precisa ser zero nas paredes. A função seno é a forma matemática que melhor se encaixa nessas condições, e a constante de normalização garante que a partícula tenha uma probabilidade total de 1 de ser encontrada em algum lugar dentro da caixa.</p>
+        
+            <p>Além disso, a quantização da energia da partícula na caixa está diretamente relacionada ao valor de \(n\). Cada valor de \(n\) corresponde a um estado de energia diferente, e essas energias são quantizadas, ou seja, a partícula não pode ter qualquer valor de energia, mas apenas valores discretos, que dependem do tamanho da caixa e do número \(n\).</p>
+        </section>            
+        </section>
+
+        <section class="concepts section" >
+            <h3>Normalização da Função de Onda</h3>
+            <p>A função de onda deve ser normalizada para que a probabilidade de encontrar a partícula na caixa seja igual a 1, ou seja, a partícula com certeza estar em algum lugar dentro da caixa. Para isso, usamos a seguinte equação:</p>
+            <p>
+                \[
+                \int_0^L |\psi_n(x)|^2 dx = 1
+                \]
+            </p>
+            <p>Os limites de integração são \(0\) e \(L\), que correspondem aos extremos da caixa. Isso significa que estamos calculando a probabilidade de encontrar a partícula em qualquer ponto dentro da caixa, desde a posição \(x = 0\) até a posição \(x = L\).</p>
+            <p>Elevamos a função de onda ao quadrado, pois o valor de \(\psi_n(x)\) por si só não representa a probabilidade. A função de onda \(\psi_n(x)\) descreve a amplitude de probabilidade, ou seja, como a partícula se comporta em diferentes posições da caixa, mas a probabilidade de encontrar a partícula em um ponto específico é dada pelo quadrado da amplitude. Portanto, \(|\psi_n(x)|^2\) é a densidade de probabilidade de encontrar a partícula em uma posição \(x\).</p>
+            <p>Ao integrar \(|\psi_n(x)|^2\) de \(0\) até \(L\), estamos somando todas as probabilidades de encontrar a partícula em todos os pontos da caixa. A condição de normalização exige que essa soma total seja igual a 1, o que reflete o fato de que, com certeza, a partícula estará em algum lugar dentro da caixa.</p>
+            
+            <h4>Passos para Normalizar:</h4>
+
+<p><strong>Substitua \(\psi_n(x)\) na integral:</strong></p>
+<p>
+    \[
+    \int_0^L \left(A \sin\left(\frac{n\pi x}{L}\right)\right)^2 dx
+    \]
+</p>
+<p>Onde \(A\) é a constante de normalização, ou seja, o valor que ajusta a função de onda para que a probabilidade total de encontrar a partícula dentro da caixa seja 1.</p>
+
+<p>Como \(\psi_n(x)\) é a função de onda, a constante \(A\) é o fator de normalização que garantirá que a integral de \(\left|\psi_n(x)\right|^2\) ao longo da caixa seja igual a 1. Esse passo é importante porque a função de onda precisa ser ajustada para que a soma das probabilidades ao longo de todo o espaço da caixa seja 100%.</p>
+
+<p>Agora, vamos simplificar a expressão dentro da integral. Ao elevar ao quadrado a função de onda, obtemos:</p>
+<p>
+    \[
+    \left(A \sin\left(\frac{n\pi x}{L}\right)\right)^2 = A^2 \sin^2\left(\frac{n\pi x}{L}\right)
+    \]
+</p>
+
+
+
+                
+                    <p><strong>Constantes fora da integral:</strong></p>
+                    <p>
+                        \[
+                        {A²}\ \int_0^L \sin^2\left(\frac{n\pi x}{L}\right) dx
+                        \]
+                    </p>
+                
+                    <p><strong>Use a identidade trigonométrica:</strong></p>
+                    <p>
+                        \[
+                        \sin^2(\theta) = \frac{1 - \cos(2\theta)}{2}
+                        \]
+                    </p>
+                    <p>Substitua na integral:</p>
+                    <p>
+                        \[
+                        {A^2}\ \int_0^L \frac{1 - \cos\left(\frac{2n\pi x}{L}\right)}{2} dx
+                        \]
+                    </p>
+                
+                    <p><strong>Simplifique a integral:</strong></p>
+                    <p>
+                        \[
+                        \frac{A^2}{2} \int_0^L 1 \, dx - \frac{1}{2} \int_0^L \cos\left(\frac{2n\pi x}{L}\right) dx
+                        \]
+                    </p>
+                
+                    <p><strong>Valores das integrais:</strong></p>
+                    <p>A primeira integral é:</p>
+                    <p>
+                        \[
+                        \int_0^L 1 \, dx = L
+                        \]
+                    </p>
+                    <p>A segunda integral é:</p>
+                    <p>
+                        \[
+                        \int_0^L \cos\left(\frac{2n\pi x}{L}\right) dx = \frac{\sin\left(\frac{2n\pi x}{L}\right)}{\frac{2n\pi}{L}}\Big|_0^L = 0
+                        \]
+                    </p>
+                
+                    <p><strong>Combine os resultados:</strong></p>
+                    <p>
+                        \[
+                        \frac{A²}{2} \cdot L = 1
+                        \]
+                    </p>
+                    <p> 
+                        \[
+                        {A}  = \sqrt{\frac{2}{L}}
+                        \]
+                    </p>
+                    <p>Assim, a função de onda normalizada será:</p>
+<p>
+    \[
+    \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right)
+    \]
+</p>
+
+<p>Com isso, garantimos que a probabilidade de encontrar a partícula em algum lugar dentro da caixa seja igual a 1, o que é uma condição fundamental na mecânica quântica.</p>
+
+                
+        </section>
+
+        <section class="concepts section">
+            <h3>Níveis de Energia</h3>
+            <p>Na mecânica quântica, a energia da partícula na caixa é quantizada. Os níveis de energia são determinados pela fórmula:</p>
+            <p>
+                \[
+                E_n = \frac{n^2 h^2}{8mL^2}
+                \]
+            </p>
+            <p>Em que:</p>
+            <ul>
+                <li><strong>n</strong> é o número quântico (1, 2, 3...)</li>
+                <li><strong>h</strong> é a Planck constante</li>
+                <li><strong>m</strong> é a massa da partícula</li>
+                <li><strong>L</strong> é a largura da caixa</li>
+            </ul>
+        
+            <h3>Dedução da Fórmula para os Níveis de Energia</h3>
+        
+            <p>Agora, vamos deduzir passo a passo de onde vem essa fórmula para os níveis de energia.</p>
+        
+            <h3>1. Equação de Schrödinger para uma partícula livre</h3>
+            <p>A equação de Schrödinger independente do tempo para uma partícula livre é dada por:</p>
+            <p>
+                \[
+                -\frac{\hbar^2}{2m} \frac{d^2 \psi(x)}{dx^2} = E \psi(x)
+                \]
+            </p>
+            <p>Onde:</p>
+            <ul>
+                <li>\(\hbar = \frac{h}{2\pi}\) é a constante de Planck reduzida</li>
+                <li>\(\psi(x)\) é a função de onda da partícula</li>
+                <li>\(E\) é a energia da partícula</li>
+                <li>\(m\) é a massa da partícula</li>
+                <li>\(x\) é a posição na caixa</li>
+            </ul>
+        
+            <h3>2. Aplicando as condições de contorno</h3>
+            <p>Para uma partícula em uma caixa com barreiras de potencial infinito nas extremidades, a função de onda deve ser zero nas extremidades da caixa:</p>
+            <p>
+                \(\psi(0) = 0 \quad \text{e} \quad \psi(L) = 0\)
+            </p>
+            <p>A solução que satisfaz essas condições é uma função senoidal, dada por:</p>
+            <p>
+                \[
+                \psi_n(x) = A \sin\left(\frac{n\pi x}{L}\right)
+                \]
+            </p>
+            <p>Onde:</p>
+            <ul>
+                <li>\(A\) é a constante de normalização</li>
+                <li>\(n\) é o número quântico (1, 2, 3...)</li>
+                <li>\(L\) é o comprimento da caixa</li>
+            </ul>
+        
+            <h3>3. Substituindo a função de onda na equação de Schrödinger</h3>
+            <p>Substituímos a função de onda \(\psi_n(x) = A \sin\left(\frac{n\pi x}{L}\right)\) na equação de Schrödinger:</p>
+            <p>
+                \[
+                -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \left[ A \sin\left(\frac{n\pi x}{L}\right) \right] = E \left[ A \sin\left(\frac{n\pi x}{L}\right) \right]
+                \]
+            </p>
+        
+            <h3>4. Derivando a função de onda</h3>
+            <p>A primeira derivada de \(\sin\left(\frac{n\pi x}{L}\right)\) é:</p>
+            <p>
+                \[
+                \frac{d}{dx} \left[ \sin\left(\frac{n\pi x}{L}\right) \right] = \frac{n\pi}{L} \cos\left(\frac{n\pi x}{L}\right)
+                \]
+            </p>
+            <p>A segunda derivada é:</p>
+            <p>
+                \[
+                \frac{d^2}{dx^2} \left[ \sin\left(\frac{n\pi x}{L}\right) \right] = -\left( \frac{n\pi}{L} \right)^2 \sin\left(\frac{n\pi x}{L}\right)
+                \]
+            </p>
+        
+            <h3>5. Substituindo na equação de Schrödinger</h3>
+            <p>Substituímos a segunda derivada na equação de Schrödinger:</p>
+            <p>
+                \[
+                \frac{\hbar^2}{2m} \left( \frac{n\pi}{L} \right)^2 \sin\left(\frac{n\pi x}{L}\right) = E \sin\left(\frac{n\pi x}{L}\right)
+                \]
+            </p>
+        
+            <h3>6. Cancelando os termos comuns</h3>
+            <p>Podemos cancelar \(\sin\left(\frac{n\pi x}{L}\right)\) dos dois lados da equação, pois a função de onda não pode ser zero para todas as posições:</p>
+            <p>
+                \[
+                \frac{\hbar^2}{2m} \left( \frac{n\pi}{L} \right)^2 = E
+                \]
+            </p>
+        
+            <h3>7. Finalizando a fórmula para a energia</h3>
+            <p>Agora, substituímos \(\hbar = \frac{h}{2\pi}\) para expressar a fórmula em termos de \(h\):</p>
+            <p>
+                \[
+                E_n = \frac{h^2}{8mL^2} n^2
+                \]
+            </p>
+        
+            <p>Essa é a fórmula final para os níveis de energia quantizados da partícula na caixa.</p>
+        </section>
+        
+        
+        
+
+        <section class="position section">
+            <h3>Posição da Partícula</h3>
+            <p>A probabilidade de encontrar a partícula em uma posição \(x\) é determinada por:</p>
+            <p>
+                \[
+                |\psi_n(x)|^2 = \frac{2}{L} \sin^2\left(\frac{n\pi x}{L}\right)
+                \]
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sphaera Quantum. All rights reserved.</p>
+    </footer>
+</body>
+</html>

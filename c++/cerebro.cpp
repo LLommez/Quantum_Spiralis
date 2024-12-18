@@ -17,13 +17,13 @@ int main() {
     // Executa o programa correspondente dependendo da escolha
     switch (escolha) {
         case 1:
-            system("./pnc1d/pnc1d");
+            system("cd ./pnc1d && ./pnc1d");
             break;
         case 2:
-            system("./osha/osha");
+            system("cd ./osha && ./osha");
             break;
         case 3:
-            system("./rr/rr");
+            system("cd ./rr && ./rr");
             break;
         
         default:

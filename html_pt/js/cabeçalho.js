@@ -8,8 +8,8 @@ window.addEventListener("scroll", () => {
         // Rolagem para cima: mostra o cabeçalho
         header.style.top = "0";
     } else {
-        // Rolagem para baixo: esconde o cabeçalho
-        header.style.top = "-600px";
+        // Rolagem para baixo: esconde o cabeçalho completamente
+        header.style.top = `-${header.offsetHeight}px`;
     }
 
     prevScrollPos = currentScrollPos;

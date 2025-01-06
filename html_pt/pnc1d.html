@@ -270,7 +270,7 @@
 
         <div class="calculator section">
             <h1>Cálculo de Energia Quântica</h1>
-            <p>Este aplicativo calcula a energia de uma partícula confinada em uma caixa unidimensional. Preencha os valores abaixo:</p>
+            <p>Este é um aplicativo que calcula a energia de uma partícula confinada em uma caixa unidimensional. Tem algum exercício interessante que você gostaria de conferir?:</p>
             
             <form id="quantumForm">
                 <label for="L">Comprimento da caixa (L) em metros:</label>
@@ -294,15 +294,134 @@
     
         <script src="../html_pt/js/eeq.js"></script>
     
-    <section class="position section">
-        <h3>Posição da Partícula</h3>
-        <p>A probabilidade de encontrar a partícula em uma posição \(x\) é determinada por:</p>
-        <p>
-            \[
-            |\psi_n(x)|^2 = \frac{2}{L} \sin^2\left(\frac{n\pi x}{L}\right)
-            \]
-        </p>
-    </section>
+        <section class="position section">
+            <h3>Posição da Partícula</h3>
+            <p>A probabilidade de encontrar a partícula em uma posição \(x\) é determinada por:</p>
+            <p>
+                \[
+                |\psi_n(x)|^2 = \frac{2}{L} \sin^2\left(\frac{n\pi x}{L}\right)
+                \]
+            </p>
+            <p>Mas como sabemos disso? Vamos descobrir!</p>
+            <h3>Passos para Determinar a Probabilidade:</h3>
+
+    <p><strong>1. O que é a densidade de probabilidade?</strong></p>
+    <p>
+        A densidade de probabilidade é uma função que nos diz a chance de encontrar a partícula em um determinado ponto \(x\) dentro da caixa. Em mecânica quântica, essa probabilidade é dada pelo quadrado do valor absoluto da função de onda:
+        \[
+        P(x) = |\psi_n(x)|^2
+        \]
+        Isso significa que, se soubermos a função de onda \(\psi_n(x)\), podemos calcular onde a partícula é mais provável de ser encontrada.
+    </p>
+
+    <p><strong>2. Substitua a função de onda na expressão de probabilidade:</strong></p>
+    <p>
+        Para uma partícula confinada em uma caixa unidimensional, a função de onda \(\psi_n(x)\) é conhecida e é dada por:
+        \[
+        \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right)
+        \]
+        Aqui:
+        <ul>
+            <li>\(L\) é o comprimento da caixa;</li>
+            <li>\(n\) é o número quântico associado ao estado da partícula (1, 2, 3, ...).</li>
+        </ul>
+        Substituímos essa expressão na fórmula da densidade de probabilidade:
+        \[
+        P(x) = |\psi_n(x)|^2 = \left(\sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right)\right)^2
+        \]
+    </p>
+
+    <p><strong>3. Eleve a função de onda ao quadrado:</strong></p>
+    <p>
+        Agora, vamos calcular o quadrado da função de onda. Elevando ao quadrado:
+        \[
+        |\psi_n(x)|^2 = \frac{2}{L} \sin^2\left(\frac{n\pi x}{L}\right)
+        \]
+        Aqui, o termo \(\frac{2}{L}\) é uma constante que garante que a função seja normalizada, ou seja, que a probabilidade total ao longo de toda a caixa seja igual a 1.
+    </p>
+
+    <p><strong>4. Interpretação do resultado:</strong></p>
+    <p>
+        A densidade de probabilidade final nos dá uma ideia de onde a partícula é mais provável de ser encontrada. A expressão:
+        \[
+        P(x) = \frac{2}{L} \sin^2\left(\frac{n\pi x}{L}\right)
+        \]
+        indica que a probabilidade depende do quadrado da função seno. Isso significa que:
+        <ul>
+            <li>Em algumas regiões (\(x\)), a probabilidade será maior (valores altos de \(\sin^2\));</li>
+            <li>Em outras regiões, será menor (valores baixos de \(\sin^2\)).</li>
+        </ul>
+        Para o estado fundamental (\(n = 1\)), a probabilidade de encontrar a partícula é maior no centro da caixa (\(x = L/2\)) e menor nas bordas (\(x = 0\) e \(x = L\)).
+    </p>
+
+    <p><strong>5. Como usar esse resultado?</strong></p>
+    <p>
+        Essa densidade de probabilidade é crucial para entender o comportamento quântico da partícula. Por exemplo, ao integrarmos \(P(x)\) em um intervalo específico (\(x_1\) a \(x_2\)), obtemos a probabilidade de a partícula estar nessa região:
+        \[
+        \text{Probabilidade} = \int_{x_1}^{x_2} P(x) dx
+        \]
+        Isso permite prever com que frequência a partícula será encontrada em diferentes partes da caixa.
+    </p>
+                
+                    <p><strong>Interprete a densidade de probabilidade:</strong></p>
+                    <p>
+                        A densidade de probabilidade indica regiões dentro da caixa onde a partícula é mais ou menos provável de ser encontrada. Isso é representado por:
+                        \[
+                        P(x) \propto \sin^2\left(\frac{n\pi x}{L}\right)
+                        \]
+                        Para \(n = 1\), por exemplo, a partícula é mais provável de ser encontrada no meio da caixa.
+                    </p>
+        </section>
+            
+<div class="calculator section">
+        <h1>Calculadora de Probabilidade Quântica</h1>
+        <p>Este é um aplicativo que calcula a probabilidade quântica de uma partícula em uma caixa unidimensional. Insira os valores desejados para obter o resultado:</p>
+                        
+        <label for="x1f">Limite inferior (x1):</label>
+        <input type="number" id="x1f" placeholder="Exemplo: 0" required>
+
+        <label for="x2f">Limite superior (x2):</label>
+        <input type="number" id="x2f" placeholder="Exemplo: 10" required>
+
+        <label for="Lf">Comprimento da caixa (L):</label>
+        <input type="number" id="Lf" placeholder="Exemplo: 10" required>
+
+        <label for="nf">Número quântico (n):</label>
+        <input type="number" id="nf" placeholder="Exemplo: 1" required min="1">
+
+        <button id="calculate">Calcular Probabilidade</button>
+
+        <div class="result" id="resultf" class="resultf"></div>
+        <div class="error" id="errorf" class="errorf"></div>
+    </div>
+    <script src="../html_pt/js/pepx.js"></script>
+</div>
+                    
+<section class="graphs section">
+    <h3>Explorando Gráficos da Densidade de Probabilidade</h3>
+    <p>
+        A densidade de probabilidade de uma partícula em uma caixa nos fornece uma ferramenta poderosa para entender como a partícula se comporta em diferentes estados quânticos. Mas o que mais podemos aprender com ela? 
+        Criando diferentes tipos de gráficos, podemos visualizar padrões importantes e obter insights sobre o mundo quântico. Aqui estão algumas possibilidades:
+    </p>
+    
+    <h3>Gráficos da Densidade de Probabilidade \(P(x)\)</h3>
+    <p>
+        Esses gráficos mostram como a probabilidade de encontrar a partícula varia em função da posição \(x\). Para diferentes números quânticos \(n\), os padrões de onda mudam:
+    </p>
+    <ul>
+        <li>No estado fundamental (\(n = 1\)), a densidade de probabilidade tem apenas um "pico", indicando que a partícula é mais provável de ser encontrada no centro da caixa.</li>
+        <li>Nos estados excitados (\(n = 2, 3, ...\)), aparecem mais picos e vales, representando regiões alternadas de alta e baixa probabilidade.</li>
+        <li>Esses picos e vales refletem os nós da função de onda, onde a probabilidade é exatamente zero.</li>
+    </ul>
+    <p>
+        Esses gráficos são úteis para entender onde a partícula é mais provável de estar para diferentes estados.
+    </p>
+    
+    
+</section>
+
+                    
+
 </main>
 
     <footer>

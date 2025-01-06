@@ -9,7 +9,7 @@ window.addEventListener("scroll", () => {
         header.style.top = "0";
     } else {
         // Rolagem para baixo: esconde o cabeçalho
-        header.style.top = "-200px";
+        header.style.top = "-600px";
     }
 
     prevScrollPos = currentScrollPos;

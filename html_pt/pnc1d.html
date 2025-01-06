@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Partícula na Caixa - Sphaera Quantum</title>
-    <link rel="stylesheet" href="../html_en/css/pnc1d.css">
+    <link rel="stylesheet" href="../html_pt/css/pnc1d.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
@@ -267,23 +267,48 @@
         
             <p>Essa é a fórmula final para os níveis de energia quantizados da partícula na caixa.</p>
         </section>
-        
-        
-        
 
-        <section class="position section">
-            <h3>Posição da Partícula</h3>
-            <p>A probabilidade de encontrar a partícula em uma posição \(x\) é determinada por:</p>
-            <p>
-                \[
-                |\psi_n(x)|^2 = \frac{2}{L} \sin^2\left(\frac{n\pi x}{L}\right)
-                \]
-            </p>
-        </section>
-    </main>
+        <div class="calculator section">
+            <h1>Cálculo de Energia Quântica</h1>
+            <p>Este aplicativo calcula a energia de uma partícula confinada em uma caixa unidimensional. Preencha os valores abaixo:</p>
+            
+            <form id="quantumForm">
+                <label for="L">Comprimento da caixa (L) em metros:</label>
+                <input type="number" id="L" placeholder="Exemplo: 1e-9" required>
+    
+                <label for="n">Número quântico principal (n):</label>
+                <input type="number" id="n" placeholder="Exemplo: 1" required>
+    
+                <label for="m">Massa da partícula (m) em kg:</label>
+                <input type="number" id="m" placeholder="Exemplo: 9.11e-31" required>
+    
+                <button type="button" onclick="calcularEnergia()">Calcular Energia</button>
+            </form>
+    
+            <div class="result" id="result">
+                <p>A energia do estado quântico é: <span id="energia"></span> Joules.</p>
+            </div>
+    
+            <div class="error" id="error" style="display: none;"></div>
+        </div>
+    
+        <script src="../html_pt/js/eeq.js"></script>
+    
+    <section class="position section">
+        <h3>Posição da Partícula</h3>
+        <p>A probabilidade de encontrar a partícula em uma posição \(x\) é determinada por:</p>
+        <p>
+            \[
+            |\psi_n(x)|^2 = \frac{2}{L} \sin^2\left(\frac{n\pi x}{L}\right)
+            \]
+        </p>
+    </section>
+</main>
 
     <footer>
         <p>&copy; 2024 Sphaera Quantum. All rights reserved.</p>
     </footer>
+
+    <script src="../html_pt/js/cabeçalho.js"></script>
 </body>
 </html>

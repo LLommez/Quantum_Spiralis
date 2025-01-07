@@ -14,7 +14,8 @@ double densidadeProbabilidade(int n, double x, double L) {
 }
 
 int main() {
-    double L, x_inicio, x_fim, intervalo;
+    double L, x_inicio, x_fim;
+    const double intervalo = 0.1; // Intervalo fixo
     int n;
 
     // Entrada dos parâmetros
@@ -26,10 +27,9 @@ int main() {
     std::cin >> x_inicio;
     std::cout << "Digite o valor do final do intervalo (x_fim): ";
     std::cin >> x_fim;
-    std::cout << "Digite o valor do intervalo de cálculo (passo): ";
-    std::cin >> intervalo;
+    
 
-    if (L <= 0 || n <= 0 || x_inicio < 0 || x_fim > L || intervalo <= 0) {
+    if (L <= 0 || n <= 0 || x_inicio < 0 || x_fim > L || x_inicio >= x_fim) {
         std::cerr << "Valores inválidos. Verifique os parâmetros e tente novamente." << std::endl;
         return 1;
     }

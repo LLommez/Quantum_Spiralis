@@ -115,12 +115,14 @@ nav ul li a:hover::after {
 }
 
 .learning-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column; /* Força a verticalidade */
+    gap: 15px; /* Espaçamento entre os links */
     list-style: none;
     padding: 0;
+    align-items: flex-start; /* Em vez de centralizar, alinha à esquerda */
 }
+
 
 .learning-links a {
     display: block;
